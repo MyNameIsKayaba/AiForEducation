@@ -21,7 +21,8 @@ def get_user_info():
 
 
 def main():
-    user_info = {'name': 'angela', 'age': '6', 'education': '1st grade', 'personality': 'outgoing, curious of everything', 'interests': 'playing video games', 'career': 'top game designer in the world'}
+    # user_info = {'name': 'angela', 'age': '6', 'education': '1st grade', 'personality': 'outgoing, curious of everything', 'interests': 'playing video games', 'career': 'top game designer in the world'}
+    user_info = get_user_info()
     course_outline = connect_to_gpt.generate_course_outline(user_info) # Connect to GPT
     with open("course_outline.md", 'w') as t:
         t.write(course_outline.choices[0].message.content)
